@@ -1,13 +1,18 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import BubblePage from "./BubblePage";
+import ColorList from "./ColorList";
+import Bubbles from "./Bubbles";
 
 test("Renders BubblePage without errors", () => {
+  render(<BubblePage />)
   // Finish this test
 });
 
 test("Fetches data and renders the bubbles on mounting", () => {
   // Finish this test
+  const test = screen.findByTestId(/bubbles/i)
+  expect( test ).toBeTruthy();
 });
 
 //Task List
