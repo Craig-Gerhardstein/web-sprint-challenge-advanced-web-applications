@@ -23,8 +23,12 @@ const Login = () => {
 
   const login = (e) => {
     e.preventDefault();
+    e.preventDefault()
+    if (!e.target.username || !e.target.password) {
+      alert("Please enter valid username and password")
+    } else{
 
-    axios
+      axios
       .post('http://localhost:5000/api/login', formData)
       .then(res => {
         localStorage.setItem('token', res.data.payload)
@@ -33,6 +37,9 @@ const Login = () => {
       .catch(err => {
         setError(`Error ${err.response.status}: ${err.response.data.error}`)
       })
+    }
+
+   
   }
 
 
